@@ -17,13 +17,10 @@ public class Main {
     taskMinMax();
     int[] array = {2, 2, 2, 1, 2, 2, 10, 1};
     var str = taskCompare(array);
-    System.out.println(str);
     int[] array2 = {10, 20, 30, 40, 50};
-    var n = 2;
-    taskShiftFirstMethod(array2, n);
+    taskShiftFirstMethod(array2, 2);
     int[] array3 = {10, 20, 30, 40, 50};
-    var n2 = 2;
-    taskShiftSecondMethod(array3, n2);
+    taskShiftSecondMethod(array3, 2);
   }
 
   private static void taskShiftSecondMethod(int[] array, int n) {
@@ -62,10 +59,11 @@ public class Main {
       if (sumArray == sumCompare) {
         str = str + " ||";
       }
-      str = str + " " +j;
+      str = str + " " + j;
       sumArray -= j;
       sumCompare += j;
     }
+    System.out.println(str);
     return str;
   }
 
@@ -125,6 +123,5 @@ public class Main {
       } else array[i] = 0;
       System.out.print(" " + array[i]);
     }
-    System.out.println();
   }
 }
