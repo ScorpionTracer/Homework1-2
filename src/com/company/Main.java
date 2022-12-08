@@ -9,39 +9,29 @@ import java.util.stream.IntStream;
 public class Main {
 
   public static void main(String[] args) {
-
     taskArrayZeroOne();
     taskEmptyArrayMultiplyEight();
     taskMultiply();
     taskDiagonal();
     taskMinMax();
-    int[] array = {2, 2, 2, 1, 2, 2, 10, 1};
-    var str = taskCompare(array);
-    int[] array2 = {10, 20, 30, 40, 50};
-    taskShiftFirstMethod(array2, 2);
-    int[] array3 = {10, 20, 30, 40, 50};
-    taskShiftSecondMethod(array3, 2);
+    taskCompare(new int[]{2, 2, 2, 1, 2, 2, 10, 1});
+    taskShiftFirstMethod(new int[]{10, 20, 30, 40, 50}, 2);
+    taskShiftSecondMethod(new int[]{10, 20, 30, 40, 50}, 2);
   }
 
   private static void taskShiftSecondMethod(int[] array, int n) {
-
     List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
     Collections.rotate(list, n);
     System.out.println(list);
   }
 
   private static void taskShiftFirstMethod(int[] arr, int n) {
-
     for (int i = 0; i < n; i++) {
       int j, last;
-      //Stores the last element of array
       last = arr[arr.length - 1];
-
       for (j = arr.length - 1; j > 0; j--) {
-        //Shift element of array by one
         arr[j] = arr[j - 1];
       }
-      //Last element of array will be added to the start of array.
       arr[0] = last;
     }
     for (int k : arr) {
@@ -49,9 +39,7 @@ public class Main {
     }
   }
 
-
   private static String taskCompare(int[] array) {
-
     var sumArray = IntStream.of(array).sum();
     var sumCompare = 0;
     var str = "";
